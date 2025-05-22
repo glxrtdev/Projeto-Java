@@ -1,3 +1,4 @@
-/bin/
-*.class
+# ignore
+**/bin/
 .vscode/
+*.class
