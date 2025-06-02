@@ -1,4 +1,37 @@
-# ignore
-**/bin/
-.vscode/
+# === Arquivos compilados Java ===
 *.class
+
+# === Pastas de build ===
+/bin/
+/out/
+/build/
+/dist/
+/target/
+
+# === VS Code ===
+.vscode/
+
+# === Eclipse ===
+.project
+.classpath
+.settings/
+
+# === NetBeans ===
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# === IntelliJ IDEA ===
+*.iml
+.idea/
+out/
+
+# === Arquivos temporários comuns ===
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
