@@ -1,53 +1,55 @@
 package model;
 
 public class Viagem {
-
     private int id;
-    private Motorista motorista;
-    private Onibus onibus;
-    private Linha linha;
-    private String dataHora;
+    private String destino;
+    private String data; 
+    private int onibusId; 
 
-    public Viagem(int id, Motorista motorista, Onibus onibus, Linha linha, String dataHora) {
+    public Viagem(int id, String destino, String data, int onibusId) {
         this.id = id;
-        this.motorista = motorista;
-        this.onibus = onibus;
-        this.linha = linha;
-        this.dataHora = dataHora;
+        this.destino = destino;
+        this.data = data;
+        this.onibusId = onibusId;
     }
-
-
-    // Getters e Setters
 
     public int getId() {
         return id;
     }
-    public Motorista geMotorista() {
-        return motorista;
+    public String getDestino() {
+        return destino;
     }
-    public Onibus getOnibus() {
-        return onibus;
+    public String getData() {
+        return data;
     }
-    public Linha getLinha() {
-        return linha;
-    }
-    public String getDataHora() {
-        return dataHora;
+    public int getOnibusId() {
+        return onibusId;
     }
 
     public void setId(int id) {
         this.id = id;
     }
-    public void setMotorista(Motorista motorista) {
-        this.motorista = motorista;
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
-    public void setOnibus(Onibus onibus) {
-        this.onibus = onibus;
+    public void setData(String data) {
+        this.data = data;
     }
-    public void setLinha(Linha linha) {
-        this.linha = linha;
+    public void setOnibusId(int onibusId) {
+        this.onibusId = onibusId;
     }
-    public void setDataHora(String dataHora) {
-        this.dataHora = dataHora;
+
+    public static Viagem fromString(String linha) {
+        String[] partes = linha.split(";");
+        int id = Integer.parseInt(partes[0]);
+        String destino = partes[1];
+        String data = partes[2];
+        int onibusId = Integer.parseInt(partes[3]);
+        return new Viagem(id, destino, data, onibusId);
+    }
+
+    @Override
+    public String toString() {
+        return id + ";" + destino + ";" + data + ";" + onibusId;
     }
 }
