@@ -2,14 +2,14 @@ package model;
 
 public class Passagem {
     private int idPassagem;
-    private int numeroOnibus;
-    private String dataViagem;
+    private int idOnibus;
+    private String dataPassagem;
     private String nomePassageiro;
 
-    public Passagem(int idPassagem, int numeroOnibus, String dataViagem, String nomePassageiro) {
+    public Passagem(int idPassagem, int idOnibus, String dataPassagem, String nomePassageiro) {
         this.idPassagem = idPassagem;
-        this.numeroOnibus = numeroOnibus;
-        this.dataViagem = dataViagem;
+        this.idOnibus = idOnibus;
+        this.dataPassagem = dataPassagem;
         this.nomePassageiro = nomePassageiro;
     }
 
@@ -19,10 +19,10 @@ public class Passagem {
         return idPassagem;
     }
     public int getNumeroOnibus() {
-        return numeroOnibus;
+        return idOnibus;
     }
-    public String getDataViagem() {
-        return dataViagem;
+    public String getDataPassagem() {
+        return dataPassagem;
     }
     public String getNomePassageiro() {
         return nomePassageiro;
@@ -31,11 +31,11 @@ public class Passagem {
     public void setIdPassagem(int idPassagem) {
         this.idPassagem = idPassagem;
     }
-    public void setNumeroOnibus(int numeroOnibus) {
-        this.numeroOnibus = numeroOnibus;
+    public void setNumeroOnibus(int idOnibus) {
+        this.idOnibus = idOnibus;
     }
-    public void setDataViagem(String dataViagem) {
-        this.dataViagem = dataViagem;
+    public void setDataViagem(String dataPassagem) {
+        this.dataPassagem = dataPassagem;
     }
     public void setNomePassageiro(String nomePassageiro) {
         this.nomePassageiro = nomePassageiro;
@@ -45,14 +45,14 @@ public class Passagem {
     public static Passagem fromString(String linha) {
         String[] partes = linha.split(";");
         int idPassagem = Integer.parseInt(partes[0]);
-        int numeroOnibus = Integer.parseInt(partes[1]);
-        String dataViagem = partes[2];
+        int idOnibus = Integer.parseInt(partes[1]);
+        String dataPassagem = partes[2];
         String nomePassageiro = partes[3];
-        return new Passagem(idPassagem, numeroOnibus, dataViagem, nomePassageiro);
+        return new Passagem(idPassagem, idOnibus, dataPassagem, nomePassageiro);
     }
 
     @Override
     public String toString() {
-        return idPassagem + ";" + numeroOnibus + ";" + dataViagem + ";" + nomePassageiro;
+        return idPassagem + ";" + idOnibus + ";" + dataPassagem + ";" + nomePassageiro;
     }
 }
