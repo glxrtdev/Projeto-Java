@@ -3,7 +3,6 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 import model.Cliente;
-import model.Motorista;
 import util.ArquivoPersistente;
 import util.ArquivoTXT;
 
