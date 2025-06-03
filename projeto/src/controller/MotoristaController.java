@@ -34,7 +34,7 @@ public class MotoristaController {
         return null;
     }
 
-    public void atualizarMotorista(String nome, String cpf, double novoSalario, String cnh) {
+    public void atualizarMotorista(String nome,double novoSalario) {
         Motorista m = buscarPorNome(nome);
         if (m != null) {
             m.setSalario(novoSalario);
