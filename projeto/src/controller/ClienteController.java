@@ -44,8 +44,6 @@ public class ClienteController {
         return false;
     }
 
-
-
     private void salvar() {
         persistencia.salvar(listaClientes, caminhoArquivo);
     }
