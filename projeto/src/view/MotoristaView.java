@@ -12,7 +12,7 @@ public class MotoristaView {
     public void menuMotorista() {
         System.out.println("Escolha uma opção: ");
         System.out.println("[1] Adicionar motorista");
-        System.out.println("[2] Listar motorista");
+        System.out.println("[2] Listar motoristas");
         System.out.println("[3] Buscar motorista");
         System.out.println("[4] Editar motorista");
         System.out.println("[5] Remover motorista");

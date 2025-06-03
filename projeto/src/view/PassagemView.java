@@ -14,7 +14,7 @@ public class PassagemView {
         System.out.println("Escolha uma opção: ");
         System.out.println("Escolha uma opção: ");
         System.out.println("[1] Adicionar passagem");
-        System.out.println("[2] Listar passagem");
+        System.out.println("[2] Listar passagens");
         System.out.println("[3] Buscar passagem");
         System.out.println("[4] Editar passagem");
         System.out.println("[5] Remover passagem");
