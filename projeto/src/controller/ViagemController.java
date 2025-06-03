@@ -9,7 +9,7 @@ import util.ArquivoTXT;
 public class ViagemController {
     private List<Viagem> listaViagens = new ArrayList<>();
     private final ArquivoPersistente<Viagem> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "dados/viagem.txt";
+    private final String caminhoArquivo = "dados/viagens.txt";
 
     public ViagemController() {
         carregar();

@@ -1,10 +1,11 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import model.Onibus;
 import util.ArquivoTXT;
 import util.ArquivoPersistente;
 
-import java.util.*;
 
 public class OnibusController {
     private List<Onibus> listaOnibus = new ArrayList<>();

@@ -1,11 +1,12 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import model.Passagem;
 import util.ArquivoPersistente;
 import util.ArquivoTXT;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class PassagemController {
     private List<Passagem> listaPassagens = new ArrayList<>();
