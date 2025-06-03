@@ -11,11 +11,6 @@ public class Motorista extends Pessoa{
         this.cnh = cnh;
     }
 
-    @Override
-    public void exibirDados() {
-        System.out.println("Motorista: " + nome + ", CNH: " + cnh);
-    }
-
     // Getters e Setters
 
     public String getCnh() {

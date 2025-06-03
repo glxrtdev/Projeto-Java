@@ -9,8 +9,6 @@ public abstract class Pessoa {
         this.cpf = cpf;
     }
 
-    public abstract void exibirDados();
-
     // Getters e Setters
 
      public String getNome() {
