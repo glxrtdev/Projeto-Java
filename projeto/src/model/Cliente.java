@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Cliente extends Pessoa {
+public class Cliente extends Pessoa {
 
     
     public Cliente(String nome, String cpf) {
