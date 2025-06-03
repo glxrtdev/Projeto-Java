@@ -10,14 +10,18 @@ public class ViagemView {
     ViagemController vc = new ViagemController();
 
     public void menuViagem() {
-        System.out.println("Escolha uma opção: ");
-        System.out.println("[1] Adicionar viagem");
-        System.out.println("[2] Listar viagens");
-        System.out.println("[3] Buscar viagem");
-        System.out.println("[4] Editar viagem");
-        System.out.println("[5] Remover viagem");
-        int op = scanner.nextInt();
-        scanner.nextLine();
+
+        int op;
+        do {
+            System.out.println("Escolha uma opção: ");
+            System.out.println("[1] Adicionar viagem");
+            System.out.println("[2] Listar viagens");
+            System.out.println("[3] Buscar viagem");
+            System.out.println("[4] Editar viagem");
+            System.out.println("[5] Remover viagem");
+            System.out.println("[0] Voltar");
+            op = scanner.nextInt();
+            scanner.nextLine();
 
         switch (op) {
             case 1: adicionarViagem();                
@@ -30,9 +34,15 @@ public class ViagemView {
                 break;
             case 5: removerViagem();
                 break;
+            case 0: System.out.println("Voltando...");
+                break;
             default:
+                    System.out.println("Opção inválida. Tente novamente");
                 break;
         }
+            
+        } while (op != 0);
+        
     }
 
 

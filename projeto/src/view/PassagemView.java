@@ -11,15 +11,18 @@ public class PassagemView {
     PassagemController pc = new PassagemController();
 
     public void menuPassagem() {
-        System.out.println("Escolha uma opção: ");
-        System.out.println("Escolha uma opção: ");
-        System.out.println("[1] Adicionar passagem");
-        System.out.println("[2] Listar passagens");
-        System.out.println("[3] Buscar passagem");
-        System.out.println("[4] Editar passagem");
-        System.out.println("[5] Remover passagem");
-        int op = scanner.nextInt();
-        scanner.nextLine();
+        int op;
+        do {
+            System.out.println("Escolha uma opção: ");
+            System.out.println("Escolha uma opção: ");
+            System.out.println("[1] Adicionar passagem");
+            System.out.println("[2] Listar passagens");
+            System.out.println("[3] Buscar passagem");
+            System.out.println("[4] Editar passagem");
+            System.out.println("[5] Remover passagem");
+            System.out.println("[0] Voltar");
+            op = scanner.nextInt();
+            scanner.nextLine();
 
         switch (op) {
             case 1: adicionarPassagem();          
@@ -32,9 +35,15 @@ public class PassagemView {
                 break;
             case 5: removerPassagem();
                 break;
+            case 0: System.out.println("Voltando...");
+                break;
             default:
+                    System.out.println("Opção inválida. Tente novamente");
                 break;
         }
+            
+        } while (op != 0);
+        
     }
 
     public void adicionarPassagem() {

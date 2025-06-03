@@ -12,13 +12,17 @@ public class MenuPrincipal {
 
 
         public void menuExibir() {
+            int op;
+
             System.out.println("Bem-vindo(a). O que deseja?");
+
+           do {   
             System.out.println("[1] Gerenciar pessoas");
             System.out.println("[2] Gerenciar ônibus");
             System.out.println("[3] Gerenciar viagens");
             System.out.println("[4] Gerenciar passagens");
             System.out.println("[0] Sair");
-            int op = scanner.nextInt();
+            op = scanner.nextInt();
 
             switch (op) {
                 case 1: pessoaView.menuPessoa();
@@ -32,8 +36,11 @@ public class MenuPrincipal {
                 case 0: System.out.println("Finalizando o programa...");
                     break;
                 default:
+                        System.out.println("Opção inválida. Tente novamente");
                     break;
             }
+            
+           } while (op != 0); 
 
         }
 

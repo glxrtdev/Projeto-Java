@@ -10,13 +10,16 @@ public class ClienteView {
     ClienteController cc = new ClienteController();
 
     public void menuCliente() {
-        System.out.println("Escolha uma opção: ");
-        System.out.println("[1] Adicionar cliente");
-        System.out.println("[2] Listar clientes");
-        System.out.println("[3] Buscar cliente");
-        System.out.println("[4] Remover cliente");
-        int op = scanner.nextInt();
-        scanner.nextLine();
+        int op;
+        do {
+            System.out.println("Escolha uma opção: ");
+            System.out.println("[1] Adicionar cliente");
+            System.out.println("[2] Listar clientes");
+            System.out.println("[3] Buscar cliente");
+            System.out.println("[4] Remover cliente");
+            System.out.println("[0] Voltar");
+            op = scanner.nextInt();
+            scanner.nextLine();
 
         switch (op) {
             case 1: adicionarCliente();           
@@ -27,9 +30,15 @@ public class ClienteView {
                 break;
             case 4: removerCliente();
                 break;
+            case 0: System.out.println("Voltando...");
+                break;
             default:
+                    System.out.println("Opção inválida. Tente novamente");
                 break;
         }
+            
+        } while (op != 0);
+        
 
     }
 

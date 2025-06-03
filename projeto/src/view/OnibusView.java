@@ -11,14 +11,17 @@ public class OnibusView {
     OnibusController oc = new OnibusController();
 
     public void menuOnibus() {
-        System.out.println("Escolha uma opção: ");
-        System.out.println("[1] Adicionar ônibus");
-        System.out.println("[2] Listar ônibus");
-        System.out.println("[3] Buscar ônibus");
-        System.out.println("[4] Editar ônibus");
-        System.out.println("[5] Remover ônibus");
-        int op = scanner.nextInt();
-        scanner.nextLine();
+        int op;
+        do {
+            System.out.println("Escolha uma opção: ");
+            System.out.println("[1] Adicionar ônibus");
+            System.out.println("[2] Listar ônibus");
+            System.out.println("[3] Buscar ônibus");
+            System.out.println("[4] Editar ônibus");
+            System.out.println("[5] Remover ônibus");
+            System.out.println("[0] Voltar");
+            op = scanner.nextInt();
+            scanner.nextLine();
 
         switch (op) {
             case 1: adicionarOnibus();           
@@ -31,9 +34,15 @@ public class OnibusView {
                 break;
             case 5: removerOnibus();
                 break;
+            case 0: System.out.println("Voltando...");
+                break;
             default:
+                    System.out.println("Opção inválida. Tente novamente");
                 break;
         }
+            
+        } while (op != 0);
+        
 
     }
 

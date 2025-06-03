@@ -10,14 +10,17 @@ public class MotoristaView {
     MotoristaController mc = new MotoristaController();
 
     public void menuMotorista() {
-        System.out.println("Escolha uma opção: ");
-        System.out.println("[1] Adicionar motorista");
-        System.out.println("[2] Listar motoristas");
-        System.out.println("[3] Buscar motorista");
-        System.out.println("[4] Editar motorista");
-        System.out.println("[5] Remover motorista");
-        int op = scanner.nextInt();
-        scanner.nextLine();
+        int op;
+        do {
+            System.out.println("Escolha uma opção: ");
+            System.out.println("[1] Adicionar motorista");
+            System.out.println("[2] Listar motoristas");
+            System.out.println("[3] Buscar motorista");
+            System.out.println("[4] Editar motorista");
+            System.out.println("[5] Remover motorista");
+            System.out.println("[0] Voltar");
+            op = scanner.nextInt();
+            scanner.nextLine();
 
         switch (op) {
             case 1: adicionarMotorista();           
@@ -30,9 +33,14 @@ public class MotoristaView {
                 break;
             case 5: removerMotorista();
                 break;
+            case 0: System.out.println("Voltando...");
+                break;
             default:
+                    System.out.println("Opção inválida. Tente novamente");
                 break;
         }
+        } while (op != 0);
+        
 
     }
 
