@@ -65,7 +65,7 @@ public class PassagemView {
     }
 
     public void editarPassagem() {
-        System.out.println("Dê um novo id para a passagem: ");
+        System.out.println("Qual o id da passagem?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 

@@ -66,7 +66,7 @@ public class ViagemView {
     }
 
     public void editarViagem() {
-        System.out.println("Dê um novo ID da viagem: ");
+        System.out.println("Qual o ID da viagem?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 

@@ -62,11 +62,11 @@ public class OnibusView {
     }
 
     public void editarOnibus() {
-        System.out.println("Dê um novo id para o ônibus: ");
+        System.out.println("Qual o id do ônibus?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Qual o modelo do ônibus?: ");
+        System.out.println("Qual será o modelo do ônibus?: ");
         String modelo = scanner.nextLine();
 
         System.out.println("Qual a nova capacidade do ônibus?: ");
