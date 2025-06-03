@@ -38,14 +38,14 @@ public class OnibusView {
     }
 
     public void adicionarOnibus() {
-        System.out.println("Dê um id para o ônibus: ");
+        System.out.print("Dê um id para o ônibus: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Qual o modelo do ônibus?: ");
+        System.out.print("Qual o modelo do ônibus?: ");
         String modelo = scanner.nextLine();
 
-        System.out.println("Qual a capacidade do ônibus?: ");
+        System.out.print("Qual a capacidade do ônibus?: ");
         int capacidade = scanner.nextInt();
         scanner.nextLine();
 
@@ -54,7 +54,7 @@ public class OnibusView {
     }
 
     public void buscarOnibus() {
-        System.out.println("Qual o id do ônibus?: ");
+        System.out.print("Qual o id do ônibus?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
@@ -62,14 +62,14 @@ public class OnibusView {
     }
 
     public void editarOnibus() {
-        System.out.println("Qual o id do ônibus?: ");
+        System.out.print("Qual o id do ônibus?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Qual será o modelo do ônibus?: ");
+        System.out.print("Qual será o modelo do ônibus?: ");
         String modelo = scanner.nextLine();
 
-        System.out.println("Qual a nova capacidade do ônibus?: ");
+        System.out.print("Qual a nova capacidade do ônibus?: ");
         int capacidade = scanner.nextInt();
         scanner.nextLine();
 
@@ -77,7 +77,7 @@ public class OnibusView {
     }
 
     public void removerOnibus() {
-        System.out.println("Qual o id do ônibus?: ");
+        System.out.print("Qual o id do ônibus?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 

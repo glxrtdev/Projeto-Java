@@ -54,7 +54,7 @@ public class ViagemView {
         Viagem novaViagem = new Viagem(id, destino, data, idOnibus);
         vc.adicionarViagem(novaViagem);
 
-        System.out.println("Viagem adicionada com sucesso!");
+        System.out.print("Viagem adicionada com sucesso!");
     }
 
     public void buscarViagem() {
@@ -66,17 +66,17 @@ public class ViagemView {
     }
 
     public void editarViagem() {
-        System.out.println("Qual o ID da viagem?: ");
+        System.out.print("Qual o ID da viagem?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Novo destino: ");
+        System.out.print("Novo destino: ");
         String destino = scanner.nextLine();
 
-        System.out.println("Nova data: ");
+        System.out.print("Nova data: ");
         String data = scanner.nextLine();
 
-        System.out.println("ID do ônibus: ");
+        System.out.print("ID do ônibus: ");
         int idOnibus = scanner.nextInt();
         scanner.nextLine();
 
@@ -84,7 +84,7 @@ public class ViagemView {
     }
 
     public void removerViagem() {
-        System.out.println("Qual o ID da viagem?: ");
+        System.out.print("Qual o ID da viagem?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 

@@ -38,18 +38,18 @@ public class PassagemView {
     }
 
     public void adicionarPassagem() {
-        System.out.println("Dê um id para a passagem: ");
+        System.out.print("Dê um id para a passagem: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Qual id do ônibus a ser atribuido?: ");
+        System.out.print("Qual id do ônibus a ser atribuido?: ");
         int idOnibus = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Qual a data da viagem? (ex: 03/06/2025): ");
+        System.out.print("Qual a data da viagem? (ex: 03/06/2025): ");
         String dataPassagem = scanner.nextLine();
 
-        System.out.println("Qual o nome do passageiro?: ");
+        System.out.print("Qual o nome do passageiro?: ");
         String nomePassageiro = scanner.nextLine();
 
         Passagem novaPassagem = new Passagem(id, idOnibus, dataPassagem, nomePassageiro);
@@ -57,7 +57,7 @@ public class PassagemView {
     }
 
     public void buscarPassagem() {
-        System.out.println("Qual o id da passagem?: ");
+        System.out.print("Qual o id da passagem?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
@@ -65,25 +65,25 @@ public class PassagemView {
     }
 
     public void editarPassagem() {
-        System.out.println("Qual o id da passagem?: ");
+        System.out.print("Qual o id da passagem?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Qual ônibus será atribuido?: ");
+        System.out.print("Qual ônibus será atribuido?: ");
         int idOnibus = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Nova data: ");
+        System.out.print("Nova data: ");
         String dataPassagem = scanner.nextLine();
 
-        System.out.println("Nome do passageiro: ");
+        System.out.print("Nome do passageiro: ");
         String nomePassageiro = scanner.nextLine();
 
         pc.atualizarPassagem(id, idOnibus, dataPassagem, nomePassageiro);
     }
 
     public void removerPassagem() {
-        System.out.println("Qual o id da passagem?: ");
+        System.out.print("Qual o id da passagem?: ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
