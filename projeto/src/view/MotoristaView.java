@@ -9,7 +9,7 @@ public class MotoristaView {
     private Scanner scanner = new Scanner(System.in);
     MotoristaController mc = new MotoristaController();
 
-    public void menuOnibus() {
+    public void menuMotorista() {
         System.out.println("Escolha uma opção: ");
         System.out.println("[1] Adicionar motorista");
         System.out.println("[2] Listar motorista");
