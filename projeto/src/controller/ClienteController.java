@@ -3,6 +3,7 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 import model.Cliente;
+import model.Motorista;
 import util.ArquivoPersistente;
 import util.ArquivoTXT;
 
@@ -12,7 +13,7 @@ public class ClienteController {
     private final ArquivoPersistente<Cliente> persistencia = new ArquivoTXT<>();
     private final String caminhoArquivo = "projeto/dados/clientes.txt";
 
-    public void clienteController() {
+    public  ClienteController() {
         carregar();
     }
 
@@ -35,11 +36,11 @@ public class ClienteController {
     } 
 
     public boolean removerPorNome(String nome) {
-        for (Cliente c : listaClientes) {
-            if (c.getNome() == nome) {
-                listaClientes.remove(c);
-                return true;
-            }
+        Cliente c = buscarPorNome(nome);
+        if (c != null) {
+            listaClientes.remove(c);
+            salvar();
+            return true;
         }
         return false;
     }
