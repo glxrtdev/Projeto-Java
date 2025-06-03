@@ -2,12 +2,12 @@ package model;
 
 public class Onibus {
     
-    private int numeroIdentificacao;
+    private int id;
     private String modelo;
     private int capacidade;
 
-    public Onibus(int numeroIdentificacao, String modelo, int capacidade) {
-        this.numeroIdentificacao = numeroIdentificacao;
+    public Onibus(int id, String modelo, int capacidade) {
+        this.id = id;
         this.modelo = modelo;
         this.capacidade = capacidade;
     }
@@ -15,7 +15,7 @@ public class Onibus {
     // Getters e Setters
 
     public int getNumeroIdentificacao() {
-        return numeroIdentificacao;
+        return id;
     }
     public String getModelo() {
         return modelo;
@@ -24,8 +24,8 @@ public class Onibus {
         return capacidade;
     }
 
-    public void setNumeroIdentificacao(int numeroIdentificacao) {
-        this.numeroIdentificacao = numeroIdentificacao;
+    public void setNumeroIdentificacao(int id) {
+        this.id = id;
     }
     public void setModelo(String modelo) {
         this.modelo = modelo;
@@ -44,7 +44,7 @@ public class Onibus {
 
     @Override
     public String toString() {
-        return numeroIdentificacao + ";" + modelo + ";" + capacidade;
+        return id + ";" + modelo + ";" + capacidade;
     }
 
 }
