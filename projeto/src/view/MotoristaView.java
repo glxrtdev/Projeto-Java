@@ -1,5 +1,6 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 import controller.MotoristaController;
 import model.Motorista;
@@ -25,7 +26,10 @@ public class MotoristaView {
         switch (op) {
             case 1: adicionarMotorista();           
                 break;
-            case 2: mc.listarMotoristas();
+            case 2: List<Motorista> motoristas = mc.listarMotoristas();
+                    for (Motorista m : motoristas) {
+                        imprimirMotorista(m);
+                    }  
                 break;
             case 3: buscarMotorista();
                 break;
@@ -53,12 +57,17 @@ public class MotoristaView {
 
         System.out.print("Qual o salário do motorista?: ");
         double salario = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.print("Qual a CNH do motorista?: ");
         String cnh = scanner.nextLine();
 
         Motorista novMotorista = new Motorista(nome, cpf, salario, cnh);
         mc.adicionarMotorista(novMotorista);
+    }
+
+    private void imprimirMotorista(Motorista m) {
+        System.out.println("Nome: " + m.getNome() + ", CPF: " + m.getCpf() + ", Salário: R$ " + m.getSalario() + ", CNH: " + m.getCnh());
     }
 
     public void buscarMotorista() {

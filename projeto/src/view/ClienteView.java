@@ -1,5 +1,6 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 import controller.ClienteController;
 import model.Cliente;
@@ -24,7 +25,10 @@ public class ClienteView {
         switch (op) {
             case 1: adicionarCliente();           
                 break;
-            case 2: cc.listarClientes();
+            case 2: List<Cliente> clientes = cc.listarClientes();
+                    for (Cliente c : clientes) {
+                        imprimirClientes(c);
+                    }
                 break;
             case 3: buscarCliente();
                 break;
@@ -51,6 +55,10 @@ public class ClienteView {
 
         Cliente novoCliente = new Cliente(nome, cpf);
         cc.adicionarCliente(novoCliente);
+    }
+
+    private void imprimirClientes(Cliente c) {
+        System.out.println("Nome: " + c.getNome() + ", CPF: " + c.getCpf());
     }
 
     public void buscarCliente() {
