@@ -35,12 +35,13 @@ public class PassagemController {
         return null;
     }
 
-    public void atualizarPassagem(int idPassagem, int novoIdOnibus, String novaData, String novoNomePassageiro) {
+    public void atualizarPassagem(int idPassagem, int novoIdOnibus, String novaData, String novoNomePassageiro, double valor) {
         Passagem p = buscarPorId(idPassagem);
         if (p != null) {
             p.setNumeroOnibus(novoIdOnibus);
             p.setDataViagem(novaData);
             p.setNomePassageiro(novoNomePassageiro);
+            p.setValor(valor);
             salvar();
         }
     }

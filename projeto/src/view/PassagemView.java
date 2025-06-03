@@ -61,7 +61,10 @@ public class PassagemView {
         System.out.print("Qual o nome do passageiro?: ");
         String nomePassageiro = scanner.nextLine();
 
-        Passagem novaPassagem = new Passagem(id, idOnibus, dataPassagem, nomePassageiro);
+        System.out.print("Qual o valor?: ");
+        double valor = scanner.nextDouble();
+
+        Passagem novaPassagem = new Passagem(id, idOnibus, dataPassagem, nomePassageiro, valor);
         pc.adicionarPassagem(novaPassagem);
     }
 
@@ -88,7 +91,10 @@ public class PassagemView {
         System.out.print("Nome do passageiro: ");
         String nomePassageiro = scanner.nextLine();
 
-        pc.atualizarPassagem(id, idOnibus, dataPassagem, nomePassageiro);
+        System.out.print("Qual o valor?: ");
+        double valor = scanner.nextDouble();
+
+        pc.atualizarPassagem(id, idOnibus, dataPassagem, nomePassageiro, valor);
     }
 
     public void removerPassagem() {

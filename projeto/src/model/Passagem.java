@@ -5,12 +5,14 @@ public class Passagem {
     private int idOnibus;
     private String dataPassagem;
     private String nomePassageiro;
+    private double valor;
 
-    public Passagem(int idPassagem, int idOnibus, String dataPassagem, String nomePassageiro) {
+    public Passagem(int idPassagem, int idOnibus, String dataPassagem, String nomePassageiro, double valor) {
         this.idPassagem = idPassagem;
         this.idOnibus = idOnibus;
         this.dataPassagem = dataPassagem;
         this.nomePassageiro = nomePassageiro;
+        this.valor = valor;
     }
 
     // Getters e setters
@@ -27,6 +29,9 @@ public class Passagem {
     public String getNomePassageiro() {
         return nomePassageiro;
     }
+    public double getValor() {
+        return valor;
+    }
 
     public void setIdPassagem(int idPassagem) {
         this.idPassagem = idPassagem;
@@ -40,6 +45,9 @@ public class Passagem {
     public void setNomePassageiro(String nomePassageiro) {
         this.nomePassageiro = nomePassageiro;
     }
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
 
 
     public static Passagem fromString(String linha) {
@@ -48,11 +56,14 @@ public class Passagem {
         int idOnibus = Integer.parseInt(partes[1]);
         String dataPassagem = partes[2];
         String nomePassageiro = partes[3];
-        return new Passagem(idPassagem, idOnibus, dataPassagem, nomePassageiro);
+        double valor = Double.parseDouble(partes[4]);
+
+        return new Passagem(idPassagem, idOnibus, dataPassagem, nomePassageiro, valor);
     }
 
     @Override
     public String toString() {
-        return idPassagem + ";" + idOnibus + ";" + dataPassagem + ";" + nomePassageiro;
+        return idPassagem + ";" + idOnibus + ";" + dataPassagem + ";" + nomePassageiro + ";" + valor;
     }
+
 }
