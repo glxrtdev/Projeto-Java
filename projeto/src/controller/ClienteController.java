@@ -1,0 +1,57 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import model.Cliente;
+import util.ArquivoPersistente;
+import util.ArquivoTXT;
+
+public class ClienteController {
+    
+    private List<Cliente> listaClientes = new ArrayList<>();
+    private final ArquivoPersistente<Cliente> persistencia = new ArquivoTXT<>();
+    private final String caminhoArquivo = "dados/clientes.txt";
+
+    public void clienteController() {
+        carregar();
+    }
+
+    public void adicionarCliente(Cliente cliente) {
+        listaClientes.add(cliente);
+        salvar();
+    }
+
+    public List<Cliente> listarClientes() {
+        return listaClientes;
+    }
+
+    public Cliente buscarPorNome(String nomeCliente) {
+        for (Cliente c : listaClientes) {
+            if (c.getNome() == nomeCliente) {
+                return c;
+            }
+        }
+        return null;
+    } 
+
+    public boolean removerPorNome(String nome) {
+        for (Cliente c : listaClientes) {
+            if (c.getNome() == nome) {
+                listaClientes.remove(c);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+    private void salvar() {
+        persistencia.salvar(listaClientes, caminhoArquivo);
+    }
+
+    private void carregar() {
+        listaClientes = persistencia.carregar(caminhoArquivo, Cliente::fromString);
+    }
+
+}
