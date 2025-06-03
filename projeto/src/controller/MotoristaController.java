@@ -10,7 +10,7 @@ import util.ArquivoTXT;
 public class MotoristaController {
     private List<Motorista> listaMotoristas = new ArrayList<>();
     private final ArquivoPersistente<Motorista> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "dados/motoristas.txt";
+    private final String caminhoArquivo = "projeto/dados/motoristas.txt";
 
     public MotoristaController() {
         carregar();
@@ -27,7 +27,7 @@ public class MotoristaController {
 
     public Motorista buscarPorNome(String nomeMotorista) {
         for (Motorista m : listaMotoristas) {
-            if (m.getNome() == nomeMotorista) {
+            if (m.getNome().equals(nomeMotorista)) {
                 return m;
             }
         }

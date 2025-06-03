@@ -11,7 +11,7 @@ import util.ArquivoTXT;
 public class PassagemController {
     private List<Passagem> listaPassagens = new ArrayList<>();
     private final ArquivoPersistente<Passagem> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "dados/passagens.txt";
+    private final String caminhoArquivo = "projeto/dados/passagens.txt";
 
     public PassagemController() {
         carregar();

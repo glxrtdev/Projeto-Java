@@ -10,7 +10,7 @@ public class ClienteController {
     
     private List<Cliente> listaClientes = new ArrayList<>();
     private final ArquivoPersistente<Cliente> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "dados/clientes.txt";
+    private final String caminhoArquivo = "projeto/dados/clientes.txt";
 
     public void clienteController() {
         carregar();
@@ -27,7 +27,7 @@ public class ClienteController {
 
     public Cliente buscarPorNome(String nomeCliente) {
         for (Cliente c : listaClientes) {
-            if (c.getNome() == nomeCliente) {
+            if (c.getNome().equals(nomeCliente)) {
                 return c;
             }
         }

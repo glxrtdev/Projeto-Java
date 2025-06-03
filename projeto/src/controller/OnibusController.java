@@ -10,7 +10,7 @@ import util.ArquivoPersistente;
 public class OnibusController {
     private List<Onibus> listaOnibus = new ArrayList<>();
     private final ArquivoPersistente<Onibus> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "dados/onibus.txt";
+    private final String caminhoArquivo = "projeto/dados/onibus.txt";
 
     public OnibusController() {
         carregar();
