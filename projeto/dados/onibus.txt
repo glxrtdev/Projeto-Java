@@ -1,0 +1,5 @@
+1;Mercedes-Benz OF-1721;46
+2;Volvo B270F;50
+3;Scania K310;42
+4;Volkswagen 17.230 OD;44
+5;Iveco Bus 170S28;48

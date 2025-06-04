@@ -28,7 +28,7 @@ public class MotoristaView {
                 break;
             case 2: List<Motorista> motoristas = mc.listarMotoristas();
                     for (Motorista m : motoristas) {
-                        imprimirMotorista(m);
+                        imprimirMotoristas(m);
                     }  
                 break;
             case 3: buscarMotorista();
@@ -66,7 +66,7 @@ public class MotoristaView {
         mc.adicionarMotorista(novMotorista);
     }
 
-    private void imprimirMotorista(Motorista m) {
+    private void imprimirMotoristas(Motorista m) {
         System.out.println("Nome: " + m.getNome() + ", CPF: " + m.getCpf() + ", Salário: R$ " + m.getSalario() + ", CNH: " + m.getCnh());
     }
 

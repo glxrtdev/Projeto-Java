@@ -14,7 +14,7 @@ public class Onibus {
 
     // Getters e Setters
 
-    public int getNumeroIdentificacao() {
+    public int getId() {
         return id;
     }
     public String getModelo() {
@@ -24,7 +24,7 @@ public class Onibus {
         return capacidade;
     }
 
-    public void setNumeroIdentificacao(int id) {
+    public void setId(int id) {
         this.id = id;
     }
     public void setModelo(String modelo) {

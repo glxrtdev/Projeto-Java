@@ -1,0 +1,7 @@
+1;Lapa;2025-06-10;1
+2;Londrina;2025-06-12;2
+3;Maringá;2025-06-15;3
+4;Foz do Iguaçu;2025-06-18;4
+5;Cascavel;2025-06-20;2
+6;Guarapuava;2025-06-22;5
+7;Ponta Grossa;2025-06-25;1

@@ -23,6 +23,7 @@ public class PassagemController {
     }
 
     public List<Passagem> listarPassagens() {
+        System.out.println("Lista de passagens:");
         return listaPassagens;
     }
 
@@ -38,7 +39,7 @@ public class PassagemController {
     public void atualizarPassagem(int idPassagem, int novoIdOnibus, String novaData, String novoNomePassageiro, double valor) {
         Passagem p = buscarPorId(idPassagem);
         if (p != null) {
-            p.setNumeroOnibus(novoIdOnibus);
+            p.setIdOnibus(novoIdOnibus);
             p.setDataViagem(novaData);
             p.setNomePassageiro(novoNomePassageiro);
             p.setValor(valor);

@@ -20,7 +20,7 @@ public class Passagem {
     public int getIdPassagem() {
         return idPassagem;
     }
-    public int getNumeroOnibus() {
+    public int getIdOnibus() {
         return idOnibus;
     }
     public String getDataPassagem() {
@@ -36,7 +36,7 @@ public class Passagem {
     public void setIdPassagem(int idPassagem) {
         this.idPassagem = idPassagem;
     }
-    public void setNumeroOnibus(int idOnibus) {
+    public void setIdOnibus(int idOnibus) {
         this.idOnibus = idOnibus;
     }
     public void setDataViagem(String dataPassagem) {

@@ -1,5 +1,6 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 import controller.OnibusController;
 import model.Onibus;
@@ -26,7 +27,10 @@ public class OnibusView {
         switch (op) {
             case 1: adicionarOnibus();           
                 break;
-            case 2: oc.listarOnibus();
+            case 2: List<Onibus> onibus = oc.listarOnibus();
+                    for (Onibus o : onibus) {
+                        imprimirOnibus(o);
+                    }
                 break;
             case 3: buscarOnibus();
                 break;
@@ -60,6 +64,11 @@ public class OnibusView {
 
         Onibus novoOnibus = new Onibus(id, modelo, capacidade);
         oc.adicionarOnibus(novoOnibus);
+    }
+
+    private void imprimirOnibus(Onibus o) {
+        System.out.println("ID: " + o.getId() + ", Modelo: " + o.getModelo() + ", Capacidade: " + o.getCapacidade());
+
     }
 
     public void buscarOnibus() {

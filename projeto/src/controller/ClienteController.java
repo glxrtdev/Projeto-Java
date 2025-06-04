@@ -22,6 +22,7 @@ public class ClienteController {
     }
 
     public List<Cliente> listarClientes() {
+        System.out.println("Lista de clientes:");
         return listaClientes;
     }
 

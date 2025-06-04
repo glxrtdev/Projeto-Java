@@ -22,6 +22,7 @@ public class MotoristaController {
     }
 
     public List<Motorista> listarMotoristas() {
+        System.out.println("Lista de motoristas:");
         return listaMotoristas;
     }
 

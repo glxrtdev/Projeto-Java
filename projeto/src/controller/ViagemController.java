@@ -21,6 +21,7 @@ public class ViagemController {
     }
 
     public List<Viagem> listarViagens() {
+        System.out.println("Lista de viagens:");
         return listaViagens;
     }
 

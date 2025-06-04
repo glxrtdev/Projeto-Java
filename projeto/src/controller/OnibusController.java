@@ -22,6 +22,7 @@ public class OnibusController {
     }
 
     public List<Onibus> listarOnibus() {
+        System.out.println("Lista de ônibus:");
         return listaOnibus;
     }
 
@@ -47,7 +48,7 @@ public class OnibusController {
 
     public Onibus buscarPorIdentificador(int numeroId) {
         for (Onibus o : listaOnibus) {
-            if (o.getNumeroIdentificacao() == numeroId) {
+            if (o.getId() == numeroId) {
                 return o;
             }
         }

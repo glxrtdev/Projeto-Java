@@ -1,5 +1,6 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 import controller.ViagemController;
 import model.Viagem;
@@ -26,7 +27,10 @@ public class ViagemView {
         switch (op) {
             case 1: adicionarViagem();                
                 break;
-            case 2: vc.listarViagens();
+            case 2: List<Viagem> viagem = vc.listarViagens();
+                    for (Viagem v : viagem) {
+                        imprimirViagens(v);
+                    }
                 break;
             case 3: buscarViagem();
                 break;
@@ -65,6 +69,12 @@ public class ViagemView {
         vc.adicionarViagem(novaViagem);
 
         System.out.print("Viagem adicionada com sucesso!");
+    }
+
+    private void imprimirViagens(Viagem v) {
+        System.out.println("ID: " + v.getId() + ", Destino: " + v.getDestino() + ", Data: " + v.getData() +
+                   ", Ônibus ID: " + v.getOnibusId());
+
     }
 
     public void buscarViagem() {

@@ -1,5 +1,6 @@
 package view;
 
+import java.util.List;
 import java.util.Scanner;
 
 import controller.PassagemController;
@@ -27,7 +28,10 @@ public class PassagemView {
         switch (op) {
             case 1: adicionarPassagem();          
                 break;
-            case 2: pc.listarPassagens();
+            case 2: List<Passagem> passagem = pc.listarPassagens();
+                    for (Passagem p : passagem) {
+                        imprimirPassagens(p);
+                    }
                 break;
             case 3: buscarPassagem();
                 break;
@@ -66,6 +70,12 @@ public class PassagemView {
 
         Passagem novaPassagem = new Passagem(id, idOnibus, dataPassagem, nomePassageiro, valor);
         pc.adicionarPassagem(novaPassagem);
+    }
+
+    private void imprimirPassagens(Passagem p) {
+        System.out.println("ID: " + p.getIdPassagem() + ", Ônibus ID: " + p.getIdOnibus() + ", Data: " + p.getDataPassagem() +
+                   ", Passageiro: " + p.getNomePassageiro() + ", Valor: R$ " + p.getValor());
+
     }
 
     public void buscarPassagem() {
