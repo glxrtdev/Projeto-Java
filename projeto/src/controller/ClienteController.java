@@ -1,5 +1,7 @@
 package controller;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import model.Cliente;
@@ -10,7 +12,7 @@ public class ClienteController {
     
     private List<Cliente> listaClientes = new ArrayList<>();
     private final ArquivoPersistente<Cliente> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "projeto/dados/clientes.txt";
+    private final Path caminhoArquivo = Paths.get("dados", "clientes.txt");
 
     public  ClienteController() {
         carregar();
@@ -46,11 +48,13 @@ public class ClienteController {
     }
 
     private void salvar() {
-        persistencia.salvar(listaClientes, caminhoArquivo);
+        persistencia.salvar(listaClientes, caminhoArquivo.toString());
+
     }
 
     private void carregar() {
-        listaClientes = persistencia.carregar(caminhoArquivo, Cliente::fromString);
+        listaClientes = persistencia.carregar(caminhoArquivo.toString(), Cliente::fromString);
+
     }
 
 }
