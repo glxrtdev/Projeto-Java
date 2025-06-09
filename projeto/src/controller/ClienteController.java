@@ -1,5 +1,6 @@
 package controller;
 
+import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -12,11 +13,16 @@ public class ClienteController {
     
     private List<Cliente> listaClientes = new ArrayList<>();
     private final ArquivoPersistente<Cliente> persistencia = new ArquivoTXT<>();
-    private final Path caminhoArquivo = Paths.get(System.getProperty("user.dir"), "projeto", "dados", "clientes.txt");
+     private Path caminhoArquivo;
 
-
-    public  ClienteController() {
-        carregar();
+    public ClienteController() {
+        try {
+            URI uri = getClass().getClassLoader().getResource("dados/clientes.txt").toURI();
+            caminhoArquivo = Paths.get(uri);
+            carregar();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void adicionarCliente(Cliente cliente) {
