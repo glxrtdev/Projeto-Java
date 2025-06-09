@@ -13,7 +13,7 @@ public class ClienteController {
     
     private List<Cliente> listaClientes = new ArrayList<>();
     private final ArquivoPersistente<Cliente> persistencia = new ArquivoTXT<>();
-     private Path caminhoArquivo;
+    private Path caminhoArquivo;
 
     public ClienteController() {
         try {

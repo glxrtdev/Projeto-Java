@@ -1,5 +1,8 @@
 package controller;
 
+import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import model.Motorista;
@@ -10,10 +13,16 @@ import util.ArquivoTXT;
 public class MotoristaController {
     private List<Motorista> listaMotoristas = new ArrayList<>();
     private final ArquivoPersistente<Motorista> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "projeto/dados/motoristas.txt";
+    private Path caminhoArquivo;
 
     public MotoristaController() {
-        carregar();
+        try {
+            URI uri = getClass().getClassLoader().getResource("dados/motoristas.txt").toURI();
+            caminhoArquivo = Paths.get(uri);
+            carregar();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void adicionarMotorista(Motorista motorista) {
@@ -54,11 +63,12 @@ public class MotoristaController {
     }
 
     private void salvar() {
-        persistencia.salvar(listaMotoristas, caminhoArquivo);
+        persistencia.salvar(listaMotoristas, caminhoArquivo.toString());
     }
 
     private void carregar() {
-        listaMotoristas = persistencia.carregar(caminhoArquivo, Motorista::fromString);
+        listaMotoristas = persistencia.carregar(caminhoArquivo.toString(), Motorista::fromString);
     }
+
 
 }

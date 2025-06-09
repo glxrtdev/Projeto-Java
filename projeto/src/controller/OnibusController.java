@@ -1,5 +1,8 @@
 package controller;
 
+import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import model.Onibus;
@@ -10,10 +13,16 @@ import util.ArquivoPersistente;
 public class OnibusController {
     private List<Onibus> listaOnibus = new ArrayList<>();
     private final ArquivoPersistente<Onibus> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "projeto/dados/onibus.txt";
+    private Path caminhoArquivo;
 
     public OnibusController() {
-        carregar();
+        try {
+            URI uri = getClass().getClassLoader().getResource("dados/onibus.txt").toURI();
+            caminhoArquivo = Paths.get(uri);
+            carregar();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void adicionarOnibus(Onibus onibus) {
@@ -57,10 +66,11 @@ public class OnibusController {
 
 
     private void salvar() {
-        persistencia.salvar(listaOnibus, caminhoArquivo);
+        persistencia.salvar(listaOnibus, caminhoArquivo.toString());
     }
 
     private void carregar() {
-        listaOnibus = persistencia.carregar(caminhoArquivo, Onibus::fromString);
+        listaOnibus = persistencia.carregar(caminhoArquivo.toString(), Onibus::fromString);
     }
+
 }

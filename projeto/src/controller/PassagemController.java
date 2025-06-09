@@ -1,5 +1,8 @@
 package controller;
 
+import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import model.Passagem;
@@ -11,10 +14,16 @@ import util.ArquivoTXT;
 public class PassagemController {
     private List<Passagem> listaPassagens = new ArrayList<>();
     private final ArquivoPersistente<Passagem> persistencia = new ArquivoTXT<>();
-    private final String caminhoArquivo = "projeto/dados/passagens.txt";
+    private Path caminhoArquivo;
 
     public PassagemController() {
-        carregar();
+        try {
+            URI uri = getClass().getClassLoader().getResource("dados/passagens.txt").toURI();
+            caminhoArquivo = Paths.get(uri);
+            carregar();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void adicionarPassagem(Passagem passagem) {
@@ -58,10 +67,13 @@ public class PassagemController {
     }
 
     private void salvar() {
-        persistencia.salvar(listaPassagens, caminhoArquivo);
+        persistencia.salvar(listaPassagens, caminhoArquivo.toString());
     }
 
     private void carregar() {
-        listaPassagens = persistencia.carregar(caminhoArquivo, Passagem::fromString);
+        listaPassagens = persistencia.carregar(caminhoArquivo.toString(), Passagem::fromString);
     }
+
+  
 }
+
