@@ -1,6 +1,5 @@
 package controller;
 
-import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -17,13 +16,13 @@ public class MotoristaController {
 
     public MotoristaController() {
         try {
-            URI uri = getClass().getClassLoader().getResource("dados/motoristas.txt").toURI();
-            caminhoArquivo = Paths.get(uri);
+            caminhoArquivo = Paths.get(System.getProperty("user.dir"), "projeto", "src", "dados", "motoristas.txt");
             carregar();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public void adicionarMotorista(Motorista motorista) {
         listaMotoristas.add(motorista);

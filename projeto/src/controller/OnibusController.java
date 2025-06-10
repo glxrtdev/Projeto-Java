@@ -1,6 +1,5 @@
 package controller;
 
-import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -17,13 +16,13 @@ public class OnibusController {
 
     public OnibusController() {
         try {
-            URI uri = getClass().getClassLoader().getResource("dados/onibus.txt").toURI();
-            caminhoArquivo = Paths.get(uri);
+            caminhoArquivo = Paths.get(System.getProperty("user.dir"), "projeto", "src", "dados", "onibus.txt");
             carregar();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public void adicionarOnibus(Onibus onibus) {
         listaOnibus.add(onibus);

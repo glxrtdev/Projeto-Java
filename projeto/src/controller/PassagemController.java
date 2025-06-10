@@ -1,6 +1,6 @@
 package controller;
 
-import java.net.URI;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -18,13 +18,13 @@ public class PassagemController {
 
     public PassagemController() {
         try {
-            URI uri = getClass().getClassLoader().getResource("dados/passagens.txt").toURI();
-            caminhoArquivo = Paths.get(uri);
+            caminhoArquivo = Paths.get(System.getProperty("user.dir"), "projeto", "src", "dados", "passagens.txt");
             carregar();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public void adicionarPassagem(Passagem passagem) {
         listaPassagens.add(passagem);
