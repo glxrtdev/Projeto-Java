@@ -7,6 +7,7 @@ import java.util.List;
 import model.Cliente;
 import util.ArquivoPersistente;
 import util.ArquivoTXT;
+import util.Logger;
 
 public class ClienteController {
     
@@ -26,15 +27,18 @@ public class ClienteController {
 
     public void adicionarCliente(Cliente cliente) {
         listaClientes.add(cliente);
+        Logger.registrar("Cliente " + cliente.getNome() +  " registrado(a).");
         salvar();
     }
 
     public List<Cliente> listarClientes() {
         System.out.println("Lista de clientes:");
-        return listaClientes;
+        Logger.registrar("Lista de clientes exibida.");
+        return listaClientes;  
     }
 
     public Cliente buscarPorNome(String nomeCliente) {
+        Logger.registrar("Busca por cliente realizada.");
         for (Cliente c : listaClientes) {
             if (c.getNome().equals(nomeCliente)) {
                 return c;
@@ -44,6 +48,7 @@ public class ClienteController {
     } 
 
     public boolean removerPorNome(String nome) {
+        Logger.registrar("Cliente " + nome + " removido(a).");
         Cliente c = buscarPorNome(nome);
         if (c != null) {
             listaClientes.remove(c);

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Onibus;
 import util.ArquivoTXT;
+import util.Logger;
 import util.ArquivoPersistente;
 
 
@@ -26,15 +27,18 @@ public class OnibusController {
 
     public void adicionarOnibus(Onibus onibus) {
         listaOnibus.add(onibus);
+        Logger.registrar("Ônibus " + onibus.getModelo() + " adicionado.");
         salvar();
     }
 
     public List<Onibus> listarOnibus() {
         System.out.println("Lista de ônibus:");
+        Logger.registrar("Lista de ônibus exibida.");
         return listaOnibus;
     }
 
     public void atualizarOnibus(int numeroId, String novoModelo, int novaCapacidade) {
+        Logger.registrar("Ônibus atualizado.");
     Onibus o = buscarPorIdentificador(numeroId);
         if (o != null) {
             o.setModelo(novoModelo);
@@ -44,6 +48,7 @@ public class OnibusController {
     }
     
     public boolean removerPorIdentificador(int numeroId) {
+        Logger.registrar("Ônibus removido.");
         Onibus o = buscarPorIdentificador(numeroId);
         if (o != null) {
             listaOnibus.remove(o);
@@ -55,6 +60,7 @@ public class OnibusController {
 
 
     public Onibus buscarPorIdentificador(int numeroId) {
+        Logger.registrar("Busca por ônibus realizada.");
         for (Onibus o : listaOnibus) {
             if (o.getId() == numeroId) {
                 return o;

@@ -1,0 +1,5 @@
+[2025-06-10 15:30:32] Lista de passagens exibida.
+[2025-06-10 15:30:51] Lista de ônibus exibida.
+[2025-06-10 15:30:58] Lista de viagens exibida.
+[2025-06-10 15:33:25] Sistema iniciado.
+[2025-06-10 15:33:27] Sistema finalizado.

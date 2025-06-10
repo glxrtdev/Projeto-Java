@@ -7,6 +7,7 @@ import java.util.List;
 import model.Motorista;
 import util.ArquivoPersistente;
 import util.ArquivoTXT;
+import util.Logger;
 
 
 public class MotoristaController {
@@ -26,15 +27,18 @@ public class MotoristaController {
 
     public void adicionarMotorista(Motorista motorista) {
         listaMotoristas.add(motorista);
+        Logger.registrar("Motorista " + motorista.getNome() + " adicionado(a).");
         salvar();
     }
 
     public List<Motorista> listarMotoristas() {
         System.out.println("Lista de motoristas:");
+        Logger.registrar("Lista de motoristas exibida.");
         return listaMotoristas;
     }
 
     public Motorista buscarPorNome(String nomeMotorista) {
+        Logger.registrar("Busca por motorista realizada.");
         for (Motorista m : listaMotoristas) {
             if (m.getNome().equals(nomeMotorista)) {
                 return m;
@@ -44,6 +48,7 @@ public class MotoristaController {
     }
 
     public void atualizarMotorista(String nome,double novoSalario) {
+        Logger.registrar("Motorista atualizado(a).");
         Motorista m = buscarPorNome(nome);
         if (m != null) {
             m.setSalario(novoSalario);
@@ -52,6 +57,7 @@ public class MotoristaController {
     }
 
     public boolean removerPorNome(String nome) {
+        Logger.registrar("Motorista " + nome + " removido(a).");
         Motorista m = buscarPorNome(nome);
         if (m != null) {
             listaMotoristas.remove(m);

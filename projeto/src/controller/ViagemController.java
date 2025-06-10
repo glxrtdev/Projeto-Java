@@ -7,6 +7,7 @@ import java.util.List;
 import model.Viagem;
 import util.ArquivoPersistente;
 import util.ArquivoTXT;
+import util.Logger;
 
 public class ViagemController {
     private List<Viagem> listaViagens = new ArrayList<>();
@@ -25,15 +26,18 @@ public class ViagemController {
 
     public void adicionarViagem(Viagem viagem) {
         listaViagens.add(viagem);
+        Logger.registrar("Viagem adicionada.");
         salvar();
     }
 
     public List<Viagem> listarViagens() {
         System.out.println("Lista de viagens:");
+        Logger.registrar("Lista de viagens exibida.");
         return listaViagens;
     }
 
     public Viagem buscarPorIdentificador(int id) {
+        Logger.registrar("Busca por viagem realizada.");
         for (Viagem v : listaViagens) {
             if (v.getId() == id) {
                 return v;
@@ -43,6 +47,7 @@ public class ViagemController {
     }
 
     public void atualizarViagem(int id, String novoDestino, String novaData, int novoOnibusId) {
+        Logger.registrar("Viagem atualizada.");
         Viagem v = buscarPorIdentificador(id);
         if (v != null) {
             v.setDestino(novoDestino);
@@ -53,6 +58,7 @@ public class ViagemController {
     }
 
     public boolean removerPorIdentificador(int id) {
+        Logger.registrar("Viagem removida.");
         Viagem v = buscarPorIdentificador(id);
         if (v != null) {
             listaViagens.remove(v);

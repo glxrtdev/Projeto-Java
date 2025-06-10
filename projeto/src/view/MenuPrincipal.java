@@ -1,6 +1,7 @@
 package view;
 
 import java.util.Scanner;
+import util.Logger;
 
 public class MenuPrincipal {
 
@@ -15,6 +16,7 @@ public class MenuPrincipal {
             int op;
 
             System.out.println("Bem-vindo(a). O que deseja?");
+            Logger.registrar("Sistema iniciado.");
 
            do {   
             System.out.println("[1] Gerenciar pessoas");
@@ -34,6 +36,7 @@ public class MenuPrincipal {
                 case 4: pv.menuPassagem();
                     break;
                 case 0: System.out.println("Finalizando o programa...");
+                        Logger.registrar("Sistema finalizado.");
                     break;
                 default:
                         System.out.println("Opção inválida. Tente novamente");
