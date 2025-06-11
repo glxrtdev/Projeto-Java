@@ -3,3 +3,6 @@
 [2025-06-10 15:30:58] Lista de viagens exibida.
 [2025-06-10 15:33:25] Sistema iniciado.
 [2025-06-10 15:33:27] Sistema finalizado.
+[2025-06-11 16:27:44] Sistema iniciado.
+[2025-06-11 16:27:48] Lista de clientes exibida.
+[2025-06-11 16:27:50] Sistema finalizado.
