@@ -6,3 +6,7 @@
 [2025-06-11 16:27:44] Sistema iniciado.
 [2025-06-11 16:27:48] Lista de clientes exibida.
 [2025-06-11 16:27:50] Sistema finalizado.
+[2025-06-12 08:22:35] Sistema iniciado.
+[2025-06-12 08:22:47] Lista de clientes exibida.
+[2025-06-12 08:23:02] Cliente Gabriel da Cruz registrado(a).
+[2025-06-12 08:23:11] Sistema finalizado.
